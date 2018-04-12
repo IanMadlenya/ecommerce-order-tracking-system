@@ -1,0 +1,21 @@
+<%- include('../layouts/staffHeader') %>
+    <style>
+        #add-track-form{
+            margin-top: 150px;
+        }
+        .form-control{
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+
+
+    <div class="container text-center" id="add-track-form">
+        <form action="/track/addtracking" method="POST">
+            <div class="form-group">
+                <input type="text" placeholder="enter order id" name="orderid" class="form-control">
+            </div>
+            <button class="btn btn-success" type="submit"><i class="fas fa-map-marker-alt"></i> Start Tracking</button>
+        </form>
+    </div>
+<%- include('../layouts/staffFooter') %>

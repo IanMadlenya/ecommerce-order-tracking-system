@@ -1,0 +1,19 @@
+<%- include('../layouts/staffHeader') %>
+<style>
+    .form-control{
+        margin: 0 auto;
+        width: 50%;
+        padding: 25px 12px;
+    }
+</style>
+<div class="text-center">
+    <h2 class="text-center">Checking Quality</h2>
+    <form action="/staff/orders/check-quality" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="checkquality" value="<%= id %>" placeholder="Scan Order ID">
+        </div>
+        <button type="submit" class="btn btn-danger">Complete Checking</button>
+    </form>
+</div>
+
+<%- include('../layouts/staffFooter') %>

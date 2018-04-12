@@ -1,0 +1,24 @@
+<%- include('../layouts/staffHeader') %>
+<div>
+    <h2 class="text-center">Totals Orders</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr class="home">
+                <th>Order Id</th>
+                <th>Details</th>
+                <th>Confirm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% orders.forEach(function(order){ %>
+                <tr>
+                    <td><%= order._id %></td>
+                    <td><a class="btn btn-primary" href="/staff/orders/delete-order/<%= order.details %>">View Details</a></td>
+                    <td><a class="btn btn-success" href="/staff/orders/confirm-order/<%= order._id %>">Confirm Order</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../layouts/staffFooter') %>

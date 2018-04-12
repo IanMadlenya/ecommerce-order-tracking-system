@@ -1,0 +1,182 @@
+<%- include('../layouts/header') %>
+    <section id="tracking-status">
+        <div class="container text-center">
+            <div class="status-heading">
+                <h3>Order Tracking ID:
+                    <%= orderId %>
+                </h3>
+            </div>
+            <div class="status-bar">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <p>Shipped By:
+                            <span>Someone</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p>Current Status:
+                            <span>Checking qulity</span>
+                        </p>
+                    </div>
+                    <div class="col-sm-6 col-md-4">
+                        <p>Expected Date:
+                            <span>19/03/2018</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="status-icon-group">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-2 text-center">
+                        <% if(info.confirmOrder == "yes") { %>
+                            <li style="background: #4CD15F;">
+                                <i style="color: #fff; font-size: 25px;" class="fas fa-cart-arrow-down "></i>
+                            </li>
+                            <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                            <% } else { %>
+                                <li style="background: #ff7979;">
+                                    <i style="color: #fff; font-size: 25px;" class="fas fa-cart-arrow-down "></i>
+                                </li>
+                                <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                                <% } %>
+                                    <p>Confirm Order</p>
+                                    
+                    </div>
+                    <div class="col-md-2">
+                        <% if(info.proccesingOrder == "yes") { %>
+                            <li style="background: #4CD15F;">
+                                <i style="color: #fff; font-size: 25px;" class="fas fa-cogs"></i>
+                            </li>
+                            <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                            <% } else { %>
+                                <li style="background: #ff7979;">
+                                    <i style="color: #fff; font-size: 25px;" class="fas fa-tasks"></i>
+                                </li>
+                                <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                                <% } %>
+                                    <p>Proccesing order</p>
+                    </div>
+                    <div class="col-md-2">
+                        <% if(info.checkQuality == "yes") { %>
+                            <li style="background: #4CD15F;">
+                                <i style="color: #fff; font-size: 25px;" class="far fa-check-circle"></i>
+                            </li>
+                            <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                            <% } else { %>
+                                <li style="background: #ff7979;">
+                                    <i style="color: #fff; font-size: 25px;" class="far fa-check-circle"></i>
+                                </li>
+                                <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                                <% } %>
+                                    <p>Checking Quality</p>
+                    </div>
+                    <div class="col-md-2">
+                        <% if( info.shipping == "yes" ) { %>
+                            <li style="background:#4CD15F">
+                                <i style="color: #fff; font-size: 25px;" class="fas fa-truck"></i>
+                            </li>
+                            <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                            <% } else { %>
+                                <li style="background:#ff7979">
+                                    <i style="color: #fff; font-size: 25px;" class="fas fa-truck"></i>
+                                </li>
+                                <p class="arrow"><i class="fas fa-arrow-circle-right"></i></p>
+                                <% } %>
+                                    <p>Shipping</p>
+                    </div>
+                    <div class="col-md-2">
+                        <% if( info.delivered == "yes" ) { %>
+                            <li style="background: #4CD15F;">
+                                <i style="color: #fff; font-size: 25px;" class="fas fa-handshake"></i>
+                            </li>
+                            <% } else { %>
+                                <li style="background: #ff7979;">
+                                    <i style="color: #fff; font-size: 25px;" class="fas fa-handshake"></i>
+                                </li>
+                                <% } %>
+                                    <p>Product Delevered</p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="map-view">
+        <input type="hidden" id="lat" value="<%= info.lat %>">
+        <input type="hidden" id="long" value="<%= info.long %>">
+        <div class="container">
+            <% if(info.shipping == "yes") { %>
+                <div id="map"></div>
+                <ul class="time-date" id="timeDate">
+                    <li><i class="far fa-clock"></i> Order Confirmed at: <span><%= info.confirmDate%></span></li>
+                    <li><i class="far fa-clock"></i> Order Proccessed at: <span><%= info.processDate%></span></li>
+                    <li><i class="far fa-clock"></i> Checked Quality at: <span><%= info.checkDate%></span></li>
+                    <li><i class="far fa-clock"></i> Start shippment at: <span><%= info.shipDate%></span></li>
+                </ul>
+            <% } else { %>
+                <div></div>
+            <% } %>
+        </div>
+    </section>
+    <section>
+    </section>
+    
+    <script>
+
+
+
+        var lat = parseFloat(document.getElementById('lat').value);
+        var lng = parseFloat(document.getElementById('long').value);
+
+        function initMap() {
+            var pointA = new google.maps.LatLng(23.751239, 90.390851),
+                pointB = new google.maps.LatLng(lat, lng),
+                myOptions = {
+                    zoom: 10,
+                    center: pointA
+                },
+                map = new google.maps.Map(document.getElementById('map'), myOptions),
+                // Instantiate a directions service.
+                directionsService = new google.maps.DirectionsService,
+                directionsDisplay = new google.maps.DirectionsRenderer({
+                    map: map
+                }),
+                markerA = new google.maps.Marker({
+                    // position: pointA,
+                    // title: "point A",
+                    // label: "Modern Chair Shop",
+                    map: map
+                }),
+                markerB = new google.maps.Marker({
+                    position: pointB,
+                    title: "Modern Chair Shop",
+                    // label: "B",
+                    map: map,
+                    icon: '/img/marker.png'
+                });
+
+            // get route from A to B
+            calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB);
+        }
+
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay, pointA, pointB) {
+            directionsService.route({
+                origin: pointA,
+                destination: pointB,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqs1WD-eAoQch06YHKTzhAHf5yFfngTUI&callback=initMap"
+    async defer></script>
+    </script>
+    <%- include('../layouts/footer') %>

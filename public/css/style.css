@@ -1,0 +1,403 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+
+/*menu*/
+.menu-class{
+  background: #f5f5f5;
+  transition: .2s;
+}
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    margin-top: 10px;
+}
+.navbar{
+  margin-bottom: 10px;
+}
+.navbar-brand {
+    padding: 5px 0px;
+    font-size: 18px;
+    line-height: 30px;
+}
+.navbar-brand img{
+  height: 40px;
+}
+.navbar-default .navbar-brand {
+    color: #000;
+}
+.navbar-nav{
+  margin-top: 4px;
+  margin-left: 30px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #000000;
+    transition: .3s;
+    text-align: center;
+    padding: 10px 12px;
+}
+.navbar-default .navbar-nav>li>a:active{
+  color: #000000;
+}
+.navbar-default .navbar-nav>li>a:visited{
+  color: #000000;
+}
+.navbar-default .navbar-nav>li>a:focus{
+  color: #000000;
+}
+.navbar-default .navbar-nav>li>a:hover{
+  color: #000000;
+}
+.navbar-nav li a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #000;
+  transition: .3s;
+}
+.navbar-nav li a:hover::after{
+  width: 100%;
+  transition: .3s;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: none;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #141414;
+}
+.navbar-default .navbar-toggle {
+  border-color: #141414;
+  border-radius: 0;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+.dropdown-menu{
+  background: #f5f5f5;
+  border-radius: 0;
+}
+/* .fa-cart-plus{
+  color: #badc58;
+} */
+/*slider*/
+#intro{
+  height: 570px;
+}
+#intro .bg-img-container{
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 85%;
+  background-size: cover !important;
+  z-index: 0;
+  /* background-position: 50% 50% !important
+  top: 12%; */
+}
+#intro h1{
+  margin-top: 190px;
+  font-size: 40px;
+}
+#intro p{
+  margin-top: 20px;
+  font-size: 16px;
+  color: #8d8d8d;
+}
+#intro .btn-default{
+  margin-top: 20px;
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+  padding: 12px 50px;
+  border-radius: 30px;
+  outline: none;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.65);
+  transition: .4s;
+}
+#intro .btn-default:hover{
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(0, 0, 0, 0.9);
+}
+#intro .btn-default:focus{
+  outline: none;
+  background: #000000;
+  color: #fff;
+  border-color: #000000;
+}
+/* action  */
+#action .action-content{
+  border-top: 1px solid #e7e7e7;
+  border-left: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  transition: .4s;
+}
+#action .action-content a{
+  margin-top: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  color: #000;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  text-align: center;
+  transition: .4s;
+}
+#action .action-content a span{
+  font-size: 22px;
+  margin-left: 10px;
+}
+#action .action-content a .fa-clock, .fa-sliders-h, .fa-lightbulb{
+  font-size: 22px;
+}
+#action .action-content:hover {
+  background: #000;
+}
+#action .action-content:hover a {
+  color: #fff;
+}
+/* products */
+#products .heading h2{
+  margin-top: 40px;
+}
+.product-row{
+  margin-top: 40px;
+}
+.product-details{
+  position: absolute;
+  background: #000;
+  opacity: .9;
+  width: 93%;
+  height: 100%;
+  top: 0;
+  display: none;
+}
+.product:hover .product-details{
+  transition: all 0.5s ease;
+  display: block;
+}
+.product-details h4{
+  color: #fff;
+  font-size: 25px;
+  margin-top: 40px;
+}
+.product-details p{
+  color: #fff;
+  font-size: 25px;
+}
+.product-details .btn {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff;
+}
+.product-details .btn:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff;
+}
+.product-details .btn:focus {
+  background: transparent;
+  border: 1px solid #fff;
+  border-radius: 0;
+  color: #fff;
+}
+/* intro-2 */
+.intro-2{
+  margin-top: 60px;
+}
+
+/* single product */
+#single-product{
+  margin-top: 150px;
+}
+#single-product img{
+  max-height: 400px;
+  width: 100%;
+}
+#single-product h1{
+  font-size: 40px;
+}
+#single-product h3{
+  font-size: 30px;
+  color: #8d8d8d;
+}
+#single-product p{
+  margin-top: 15px;
+  color: #8d8d8d;
+  font-size: 16px;
+}
+#single-product .btn-default{
+  margin-top: 20px;
+  color: #fff;
+  background-color: #000000;
+  border-color: #000000;
+  padding: 12px 50px;
+  border-radius: 30px;
+  outline: none;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.65);
+  transition: .4s;
+}
+#single-product .btn-default:hover{
+  background: rgba(0, 0, 0, 0.9);
+  border-color: rgba(0, 0, 0, 0.9);
+}
+#single-product .btn-default:focus{
+  outline: none;
+  background: #000000;
+  color: #fff;
+  border-color: #000000;
+}
+
+/* login form */
+/* #login-form{
+  margin-top: 100px;
+} */
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 80vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
+}
+.signin-signup-form .form-control{
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 0;
+  padding: 20px 25px;
+  border: 1px solid #000;
+}
+.signin-signup-form .form-control:focus{
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0,0,0,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0,0,0,.6);
+}
+#login-form .row{
+  margin-top: 40px;
+}
+.btn-signin-signup{
+  padding: 10px 40px;
+  margin: 0 auto;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  border-radius: 0;
+  transition: .3s ease;
+}
+.btn-signin-signup:hover{
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+}
+.btn-signin-signup:focus{
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+.btn-signin-signup:active{
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+.btn-signin-signup:visited{
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  outline: none;
+}
+
+.signup-form{
+  margin-top: 50px;
+}
+
+.cat-product-heading{
+  margin-top: 100px;
+}
+
+/* user map  */
+#map-view{
+  margin-top: 20px;
+}
+#map{
+  height: 500px;
+  width: 100%;
+}
+#tracking-status{
+  margin-top: 100px;
+}
+#tracking-status .status-heading{
+  background: #98d091;
+}
+#tracking-status .status-heading h3{
+  color: #fff;
+  padding: 22px;
+  margin-bottom: 0px;
+}
+#tracking-status .status-bar{
+  background: #b5e6ae;
+  padding: 10px;
+}
+#tracking-status .status-bar p{
+  margin-bottom: 0px;
+  color: #4d7e51;
+  font-size: 17px;
+}
+#tracking-status .status-bar p span{
+  color: #000000;
+  font-size: 14px;
+}
+
+/* status icon group */
+.status-icon-group li{
+  margin: 0 auto;
+  margin-top: 20px;
+  list-style: none;
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  line-height: 80px;
+}
+.status-icon-group li .far, .fas{
+  color: #fff;
+  font-size: 30px;
+}
+.status-icon-group p{
+  margin-top: 10px;
+  font-size: 15px;
+  color: #000;
+}
+#timeDate{
+  margin-top: 20px;
+}
+.time-date li{
+  list-style: none;
+  margin: 10px;
+  font-size: 17px;
+}
+.time-date li span{
+  color: #ff9050;
+}
+.arrow{
+  position: absolute;
+  margin-left: 147px;
+}
+.fa-arrow-circle-right{
+  font-size: 20px;
+}
+
+#footer{
+  margin-top: 40px;
+  background: #f5f5f5;
+  padding-top:40px;
+  padding-bottom: 30px;
+}
+#footer p{
+  color: #8d8d8d;
+  font-size: 18px;
+}

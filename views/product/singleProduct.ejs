@@ -1,0 +1,18 @@
+<%- include('../layouts/header') %>
+    <!-- single product -->
+    <section id="single-product">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <img class="img-responsive" src="/productImages/<%= product.id %>/<%= product.image %>" alt="product image">
+                </div>
+                <div class="col-md-4 col-md-offset-1">
+                  <h1><%= product.title %></h1>
+                  <h3>$<%= product.price %></h3>
+                  <p><%= product.desc %></p>
+                  <a href="/cart/add/<%= product.slug %>" class="btn btn-default">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<%- include('../layouts/footer') %>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        <%= title %>
+    </title>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <style>
+        .btn-danger {
+            margin-top: 200px;
+            padding: 105px 50px;
+            border-radius: 50%;
+        }
+    </style>
+    <input type="hidden" id="orderid" value="<%= orderId %>">
+
+
+    <div class="container text-center">
+        <button class="btn btn-danger">Product Tracking Now</button>
+        <p id="result"></p>
+    </div>
+
+
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+    <script>
+        var rlt = document.getElementById('result');
+        var orderId = document.getElementById('orderid').value;
+        console.log(orderId);
+
+        if (navigator.geolocation) {
+            var optn = {
+                enableHighAccuracy: true,
+                timeout: Infinity,
+                maximumAge: 0
+            };
+            navigator.geolocation.watchPosition(sendPosition, fail, optn);
+        } else {
+            alert("not working");
+        }
+
+        function sendPosition(position) {
+            rlt.innerHTML = "<b>Latitude: </b>" + position.coords.latitude + " <b>Logititude: </b>" + position.coords.longitude;
+            var data = {};
+            data.lat = position.coords.latitude;
+            data.lng = position.coords.longitude;
+            data.orderid = orderId;
+            data.shipping = "yes";
+            console.log(data);
+
+            $.ajax({
+                type: 'POST',
+                url: '/track/addtracking/sending',
+                data: data,
+                success: function (data) {
+                    console.log('success');
+                }
+            });
+        }
+
+        function fail() {
+            alert('fail');
+        }
+
+
+
+    </script>
+</body>
+
+</html>

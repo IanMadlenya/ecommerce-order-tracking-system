@@ -1,0 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#imgPreview{
+    margin: 20px;   
+}
+.product-img{
+    height: 100px;
+    width: 100px;
+}
+#productTable tr td{
+    vertical-align: middle;
+}
+.navbar-inverse{
+    border-radius: 0;
+}

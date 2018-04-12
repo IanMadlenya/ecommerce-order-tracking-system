@@ -1,0 +1,79 @@
+<%- include('./layouts/header') %>
+<!-- intro -->
+<section id="intro">
+    <div class="bg-img-container" style="background: url('./img/bg-7.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7 text-left">
+            <h1>Modern Chair</h1>
+            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
+            <a href="/products/modern-chair" class="btn btn-default">Shop Now</a>
+          </div>
+        </div>
+    </div>
+</section>
+
+<!-- action-bar  -->
+<section id="action">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-sm-4 action-content">
+              <a href="#">
+                <i class="far fa-clock"></i> <span>Fast Delivery</span>
+              </a>
+            </div>
+            <div class="col-sm-4 action-content">
+              <a href="#">
+                <i class="fas fa-sliders-h"></i><span>Adjustable</span>
+              </a>
+            </div>
+            <div class="col-sm-4 action-content" style="border-right: 1px solid #e7e7e7;">
+              <a href="#">
+                <i class="far fa-lightbulb"></i><span>Inovative</span>
+              </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- our products  -->
+<section id="products">
+    <div class="container">
+      <div class="heading text-center">
+        <h2>Trending Products</h2>
+      </div>
+      <!-- displaying products -->
+      <% products.forEach((product) => { %>
+      <div class="row product-row">
+        <% product.forEach((p) => { %>
+        <div class="col-md-4">
+          <div class="product">
+            <img class="img-responsive" src="/productImages/<%= p.id %>/<%= p.image %>" alt="">
+            <div class="product-details text-center">
+              <h4><%= p.title %></h4>
+              <p>$<%= p.price %></p>
+              <a href="/cart/add/<%= p.slug %>" class="btn btn-primary"><i class="fas fa-cart-plus"></i> Add to cart</a><br><br>
+              <a href="/products/product/<%= p.slug %>" class="btn btn-default">Details</a>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <% }) %>
+    </div>
+  </section>
+
+  <!-- intro -->
+  <section id="intro" class="intro-2">
+    <div class="bg-img-container" style="background: url('./img/bg-3.jpg');">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-sm-5 col-md-offset-7 col-sm-offset-7 text-left">
+            <h1>Sofa Chair</h1>
+            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates depudiandae sint et molestiae.</p>
+            <a href="/products/sofa-chair" class="btn btn-default">Shop Now</a>
+          </div>
+        </div>
+    </div>
+  </section>
+<%- include('./layouts/footer') %>

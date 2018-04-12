@@ -1,0 +1,19 @@
+<%- include('../layouts/staffHeader') %>
+<style>
+    .form-control{
+        margin: 0 auto;
+        width: 50%;
+        padding: 25px 12px;
+    }
+</style>
+<div class="text-center">
+    <h2 class="text-center">Order Proccesing</h2>
+    <form action="/staff/orders/complete-proccess" method="POST">
+        <div class="form-group">
+            <input type="text" class="form-control" name="proccessorder" value="<%= id %>" placeholder="Scan Order ID">
+        </div>
+        <button type="submit" class="btn btn-danger">Complete Proccesing</button>
+    </form>
+</div>
+
+<%- include('../layouts/staffFooter') %>

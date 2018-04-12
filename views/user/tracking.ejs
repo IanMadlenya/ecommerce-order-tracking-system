@@ -1,0 +1,62 @@
+<%- include('../layouts/header') %>
+    <style>
+        #tracking {
+            margin-top: 150px;
+        }
+
+        .form-control {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+    </style>
+    <section id="tracking">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Track</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <% orders.map((order) => { %>
+                        <tr>
+                            <td>
+                                <%= order._id %>
+                            </td>
+                            <td>
+                                <a href="/track/order/<%= order._id%>" class="btn btn-primary">Track this order</a>
+                            </td>
+                        </tr>
+                            <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <div class="container text-center">
+            <h2>Enter a order id</h2>
+            <form action="/track" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="enter order id.." name="orderid">
+                </div>
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-map-marker-alt"></i> Track</button>
+            </form>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include('../layouts/footer') %>
