@@ -36,7 +36,7 @@ until it reaches to customer door.</p>
 <img src="tracking1.png" />
 <img src="tracking2.png" />
 <h3>Admin area</h3>
-<img src="deliveryman.png" />
+<img src="admin.png" />
 <h3>Add product to track by deliveryman</h3>
 <img src="deliveryman.png" />
 
