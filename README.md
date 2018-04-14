@@ -16,6 +16,11 @@ until it reaches to customer door.</p>
   <li>Where is the order right now?</li>
   <li>When will it be delivered?</li>
 </ul>
+<p>Built with followig technologies<p>
+ <a href="https://expressjs.com/">Express</>
+ <a href="http://www.passportjs.org/">Passport</>
+ <a href="https://www.mongodb.com/">MongoDB</>
+ <a href="https://developers.google.com/maps/documentation/javascript/">Google map JavaScript API</>
 <h3>Installation</h3>
 <p>Clone or download</p>
 <p>Navigate to this folder with cmd</p>
