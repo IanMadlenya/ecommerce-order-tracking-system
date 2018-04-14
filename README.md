@@ -38,5 +38,13 @@ until it reaches to customer door.</p>
 <h3>Admin area</h3>
 <img src="admin.png" />
 <h3>Add product to track by deliveryman</h3>
-<img style="max-width:50%;" src="deliveryman.png" />
-
+<style>
+  .mobile{
+     max-width:50%;
+  }
+</style>
+<img class="mobile" style="max-width:50%;" src="deliveryman.png" />
+<h3>Future plans</h3>
+<li>Integrete payment method<li>
+<li>Add search functionalities<li>
+<li>Add feedback system<li>
