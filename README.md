@@ -38,5 +38,5 @@ until it reaches to customer door.</p>
 <h3>Admin area</h3>
 <img src="admin.png" />
 <h3>Add product to track by deliveryman</h3>
-<img style="height:200px;" src="deliveryman.png" />
+<img style="max-width:50%;" src="deliveryman.png" />
 
