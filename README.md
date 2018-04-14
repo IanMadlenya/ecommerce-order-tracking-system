@@ -17,10 +17,10 @@ until it reaches to customer door.</p>
   <li>When will it be delivered?</li>
 </ul>
 <p>Built with followig technologies<p>
- <a href="https://expressjs.com/">Express</>
- <a href="http://www.passportjs.org/">Passport</>
- <a href="https://www.mongodb.com/">MongoDB</>
- <a href="https://developers.google.com/maps/documentation/javascript/">Google map JavaScript API</>
+ <a href="https://expressjs.com/">Express</a>
+ <a href="http://www.passportjs.org/">Passport</a>
+ <a href="https://www.mongodb.com/">MongoDB</a>
+ <a href="https://developers.google.com/maps/documentation/javascript/">Google map JavaScript API</a>
 <h3>Installation</h3>
 <p>Clone or download</p>
 <p>Navigate to this folder with cmd</p>
