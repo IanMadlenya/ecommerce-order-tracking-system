@@ -16,3 +16,8 @@ until it reaches to customer door.</p>
   <li>Where is the order right now?</li>
   <li>When will it be delivered?</li>
 </ul>
+<h3>Installation</h3>
+<p>Clone or download</p>
+<p>Navigate to this folder with cmd</p>
+<pre><code>$npm install</code></pre>
+<pre><code>$node app.js or nodemon</code></pre>
